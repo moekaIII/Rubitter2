@@ -3,5 +3,20 @@
 </section>
 
 <div class="list">
+  <p id="notice"><%= notice %></p>
 
+  <div>
+    <table class="table">
+      <tr>
+        <th>Content</th>
+      </tr>
+    <% @murmurs.each do |murmur| %>
+      <tr>
+        <td><%= murmur.content %></td>
+        <td><%= link_to 'Show', murmur_path(murmur.id) %></td>
+        <td><%= link_to 'Edit', edit_murmur_path(murmur.id) %></td>
+        <td><%= link_to 'Destroy',murmur_path(murmur.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
 </div>
