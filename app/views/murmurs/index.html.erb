@@ -13,9 +13,9 @@
     <% @murmurs.each do |murmur| %>
       <tr>
         <td><%= murmur.content %></td>
-        <td><button type="button" class="btn btn-outline-warning"><%= link_to 'Show', murmur_path(murmur.id) %></button></td>
-        <td><button type="button" class="btn btn-outline-info"><%= link_to 'Edit', edit_murmur_path(murmur.id) %></button></td>
-        <td><button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy',murmur_path(murmur.id), method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td><button type="button" class="btn btn-outline-warning"><%= link_to 'Show', murmur_path(murmur) %></button></td>
+        <td><button type="button" class="btn btn-outline-info"><%= link_to 'Edit', edit_murmur_path(murmur) %></button></td>
+        <td><button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy',murmur_path(murmur), method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
     </table>
