@@ -1,0 +1,20 @@
+<h2>Send with the following contents.</h2>
+
+<%= form_with(model: @murmur, url: murmurs_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+
+  <p>
+    <strong>Content : </strong>
+    <%= @murmur.content %>
+  </p>
+
+  <%= form.submit "Submit" %>
+<% end %>
+
+<br>
+
+<%= form_with(model: @murmur, url: new_murmur_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "Back", name: 'back' %>
+<% end %>

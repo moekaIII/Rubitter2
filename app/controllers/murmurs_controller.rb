@@ -6,7 +6,11 @@ class MurmursController < ApplicationController
   end
 
   def new
-    @murmur = Murmur.new
+    if params[:back]
+      @murmur = Murmur.new(murmur_params)
+    else
+      @murmur = Murmur.new
+    end
   end
 
   def create
@@ -35,6 +39,11 @@ class MurmursController < ApplicationController
   def destroy
     @murmur.destroy
     redirect_to murmurs_path, notice:"Rubeet was successfully destroyed."
+  end
+
+  def confirm
+    @murmur = Murmur.new(murmur_params)
+    render :new if @murmur.invalid?
   end
 
 private
