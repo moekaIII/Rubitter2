@@ -1,7 +1,7 @@
-<%= form_with(model: @murmur,local: true, url: choose_new_or_edit) do |form| %>
+<%= form_with(model: @murmur, local: true, url: choose_new_or_edit) do |form| %>
 <% if @murmur.errors.any? %>
   <div id="error_explanation">
-    <h2>There are<%= @murmur.errors.count %>errors(T T) </h2>
+    <h2>There are <%= @murmur.errors.count %> errors(T T) </h2>
 
     <ul>
     <% @murmur.errors.full_messages.each do |message| %>
