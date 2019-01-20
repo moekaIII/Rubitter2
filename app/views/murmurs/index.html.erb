@@ -1,5 +1,9 @@
 <section class="main-header">
-  <h1>Rubeet List</h1>
+  <% if current_user.try(:admin?) %>
+    <h1>Rubeets_admin</h1>
+  <% else %>
+    <h1>Rubeet List</h1>
+  <% end %>
 </section>
 
 <div class="list">
